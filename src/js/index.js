@@ -10,10 +10,10 @@ const submitForm = async () => {
     const response = await fetch(
       `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`
     )
-    let objJSON = await response
+    const objJSON = await response
     const obj = await objJSON.json()
 
-    console.log(obj)    
+    console.log(obj)
     alert("Ответ получен загляните в консоль!")
   }
 }
