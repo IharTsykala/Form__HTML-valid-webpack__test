@@ -23,6 +23,9 @@ $rotate-hard: -35deg;
   position: relative;
   z-index: 0;
   border: $width-border solid $color-light;
+  @media (max-width: 800px) {
+    @include transform(0);
+  }
 }
 
 %transform-form-blocks {
@@ -36,6 +39,12 @@ $rotate-hard: -35deg;
   z-index: 1;
   background: none;
   border: none;
+  &:focus {
+    outline: none;
+  }
+  @media (max-width: 800px) {
+    @include transform(0);
+  }
 }
 
 * {
@@ -49,14 +58,33 @@ body {
   height: 100vw;
   display: grid;
   padding: 10vw;
+  @media (max-width: 800px) {
+    padding: 10% 0;
+  }
 }
 
 .container__form {
   display: grid;
   justify-self: center;
   width: 50%;
-  height: 30%;
+  height: 10%;
   background-color: $background-dark;
+  @media (max-width: 1224px) {
+    width: 60%;
+    height: 15%;
+  }
+  @media (max-width: 980px) {
+    width: 70%;
+    height: 15%;
+  }
+  @media (max-width: 800px) {
+    width: 80%;
+    height: 20%;
+  }
+  @media (max-width: 450px) {
+    width: 100%;
+    height: 25%;
+  }
 }
 
 .form {
@@ -66,13 +94,24 @@ body {
   justify-self: center;
   align-self: center;
   grid-template-columns: 70% 30%;
+  @media (max-width: 800px) {
+    width: 95%;
+    height: 50%;
+    grid-template-columns: 65% 35%;
+    column-gap: 1px;
+  }
+  @media (max-width: 450px) {
+    width: 95%;
+    height: 60%;
+    grid-template-columns: 55% 45%;
+  }
 
   .container-form-input {
     background-color: $background-light;
   }
 
   .container-form-input_transform {
-    @extend %container-transform-form-blocks;    
+    @extend %container-transform-form-blocks;
   }
 
   .form__input {
@@ -87,7 +126,7 @@ body {
   }
 
   .container-form-button_transform {
-    @extend %container-transform-form-blocks;    
+    @extend %container-transform-form-blocks;
   }
 
   .form__button {
