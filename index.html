@@ -6,19 +6,22 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="backround">
-      <form action="#top">
-        <fieldset>
-          <label for="FName">
-            <b>First name</b>
-          </label>
-          <input type="text" name="FName" id="FName" />
-        </fieldset>
-        <fieldset>
-          <button id="submitForm">submit</button>
-        </fieldset>
+    <div class="container__form">
+      <form action="#top" class="form">
+        <label class="form__label container-form-input container-form-input_transform">
+          <input
+            type="text"
+            name="inputText"
+            id="inputText"
+            class="form__input"
+            placeholder="Ваш номер..."
+          />
+        </label>
+        <div class="container-form-button container-form-button_transform">
+          <button id="submitForm" class="form__button">Заказать</button>
+        </div>
       </form>
-    </div>    
+    </div>
     <script type="text/javascript" src="./dist/bundle.js"></script>
   </body>
 </html>
